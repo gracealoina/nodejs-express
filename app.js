@@ -6,12 +6,16 @@ const express = require ('express')
 const app = express()
 const port = 3000
 
+app.set('view engine', 'ejs') //setting penggunaan template engine untuk express
+app.set('views', './view-ejs') //setting penggunaan folder untuk menyimpan file.ejs
+
+//membuat basic routing 
 app.get('/', (req, res) => {
-    res.send(`<h2>Hello World!</h2><hr>`)
+    res.render('beranda')
   })
 
   app.get('/profil', (req, res) => {
-    res.send('<h1>Profil saya </h1>')
+    res.render('profil')
   })
   
   app.listen(port, () => {
