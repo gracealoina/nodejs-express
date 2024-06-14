@@ -17,6 +17,17 @@ app.get('/', (req, res) => {
   app.get('/profil', (req, res) => {
     res.render('profil')
   })
+
+  app.get('/pengalaman', (req, res) => {
+      res.render('daftar-pengalaman',{
+        nama :'ss',
+        posisi:'aa',
+        perusahaan: 'bb',
+        gaji: '9',
+
+    })
+  })
+
   
   app.listen(port, () => {
     console.log(`app sudah siap ${port}`)

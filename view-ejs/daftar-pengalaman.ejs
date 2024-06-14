@@ -1,0 +1,24 @@
+<h1>Pengalaman Kandidat</h1>
+
+
+<ul>
+    <!--cara penulisan logika pertama-->
+    <li><%= nama %></li>
+    <li><%= posisi %></li>
+    <li><%= perusahaan %></li>
+    <li><%= gaji.toLocaleString ('id-ID') %></li>
+    <% if (gaji>10) {%>
+        <li> gaji anda kena pajak</li>
+    <%} else {%>
+       <li> aman, ga perlu bayar pajak </li>
+    <%} %>
+
+    <!--cara penulisan logika kedua-->
+    <%
+         if (gaji>10){
+            __append('<li> gaji anda kena pajak</li>')
+         }else{
+            __append('<li> aman, ga perlu bayar pajak </li>')
+         }
+     %>
+</ul>
