@@ -36,7 +36,7 @@ module.exports =
 
 
 
-get_satu_karyawan:function(){
+get_satu_karyawan:function(id){ //ditangkap idnya masuk ke function
     let sql = mysql.format(
         `SELECT 
             k.*,
@@ -45,7 +45,8 @@ get_satu_karyawan:function(){
         FROM karyawan AS k
         LEFT JOIN master_departemen AS d ON d.id = k. departemen_id
         LEFT JOIN master_jabatan AS j ON j.id = k. jabatan_id
-        WHERE k.id=1;`
+        WHERE k.id=?;`,// dibuat tanda ? krn rawan kena hack 
+        [id]
     )
 
     

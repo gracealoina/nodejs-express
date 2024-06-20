@@ -21,7 +21,8 @@
                 <td> <%= semua_karyawan[i].departemen_kode%></td>
                 <td> <%= semua_karyawan[i].jabatan_nama%></td>
                 <td>
-                    <a href="/karyawan/detail">
+                    <a href="/karyawan/detail/<%= semua_karyawan[i].id %>"> 
+                           <%# untuk mencari id dari semua karyawan %>
                         <button>detail</button>
                     </a>
                 </td>
@@ -43,4 +44,4 @@
     </tbody>
 </table>
 
-<pre
+

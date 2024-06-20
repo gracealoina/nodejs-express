@@ -39,10 +39,12 @@ app.get('/', (req, res) => {
     
   })
 
-  app.get('/karyawan/detail',async (req,res)=> {
+  app.get('/karyawan/detail/:id_karyawan',async (req,res)=> {//ada penambahan id karyawan urlnya
     const m_karyawan= require('./model/m_karyawan')
+    const id= req.params.id_karyawan 
+    //request untuk menangkap apa yg diminta, cth ketika diklik no 1, maka param menangkap id dr url:/no urut 1 untuk dikirim ke get satu karyawan
     let dataview ={
-      detail_karyawan: await m_karyawan.get_satu_karyawan(),
+      detail_karyawan: await m_karyawan.get_satu_karyawan(id),
     }
     res.render('karyawan/detail', dataview)
   
